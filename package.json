@@ -1,0 +1,37 @@
+{
+  "name": "webpack-cli",
+  "version": "1.0.0",
+  "description": "基于 webpack 的多页面脚手架",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --content-base --progress --config build/webpack.dev.conf.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webpack-cli"
+  ],
+  "author": "kuangpengfei",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^7.2.5",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "css-loader": "^0.28.8",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.6",
+    "friendly-errors-webpack-plugin": "^1.6.1",
+    "html-loader": "^0.5.4",
+    "html-webpack-plugin": "^2.30.1",
+    "node-notifier": "^5.2.1",
+    "node-sass": "^4.7.2",
+    "path": "^0.12.7",
+    "portfinder": "^1.0.13",
+    "postcss-loader": "^2.0.10",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.1",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.10.1",
+    "webpack-merge": "^4.1.1"
+  }
+}
