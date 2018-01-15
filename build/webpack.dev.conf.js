@@ -60,26 +60,17 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
-        new webpack.NoEmitOnErrorsPlugin(),
-        // https://github.com/ampedandwired/html-webpack-plugin
-        new HtmlWebpackPlugin({
-            filename: 'index.html',
-            template: './src/index.html',
-            inject: true,
-            chunks: ['index'],
-            minify: {
-                removeComments: true,
-                collapseWhitespace: true
-            }
-        })
+        new webpack.NoEmitOnErrorsPlugin()
     ]
 });
 
 Object.keys(baseWebpackConfig.entry).forEach(function (name) {
+    // https://github.com/ampedandwired/html-webpack-plugin
     var hwp = new HtmlWebpackPlugin({
         filename: name + '.html',
         template: './src/' + name + '.html',
         inject: true,
+        favicon: './favicon.ico',
         minify: {
             removeComments: true,
             collapseWhitespace: true,

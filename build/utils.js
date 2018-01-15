@@ -15,12 +15,12 @@ exports.createNotifierCallback = () => {
         if (severity !== 'error') return;
         const error = errors[0];
         const filename = error.file && error.file.split('!').pop();
-
+        // Send cross platform native notifications using Node.js.
         notifier.notify({
             title: packageConfig.name,
             message: severity + ': ' + error.name,
             subtitle: filename || '',
-            icon: path.join(__dirname, 'logo.png')
+            icon: path.join(__dirname, 'webpack.svg')
         });
     };
 };
