@@ -28,7 +28,8 @@ const webpackConfig = merge(baseWebpackConfig, {
                     },
                     'sass-loader',
                     'postcss-loader'
-                ]
+                ],
+                publicPath: '../../'
             })
         }]
     },
@@ -36,7 +37,8 @@ const webpackConfig = merge(baseWebpackConfig, {
     output: {
         path: config.build.assetsRoot,
         filename: utils.assetsPath('js/[name].[chunkhash].js'),
-        chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
+        chunkFilename: utils.assetsPath('js/[id].[chunkhash].js'),
+        publicPath: config.build.assetsPublicPath
     },
     plugins: [
         // http://vuejs.github.io/vue-loader/en/workflow/production.html
@@ -113,17 +115,18 @@ const webpackConfig = merge(baseWebpackConfig, {
         // prevent vendor hash from being updated whenever app bundle is updated
         new webpack.optimize.CommonsChunkPlugin({
             name: 'manifest',
+            chunks: ['vendor'],
             minChunks: Infinity
         }),
         // This instance extracts shared chunks from code splitted chunks and bundles them
         // in a separate chunk, similar to the vendor chunk
         // see: https://webpack.js.org/plugins/commons-chunk-plugin/#extra-async-commons-chunk
-        new webpack.optimize.CommonsChunkPlugin({
+        /* new webpack.optimize.CommonsChunkPlugin({
             name: 'app',
             async: 'vendor-async',
             children: true,
             minChunks: 3
-        }),
+        }), */
 
         // copy custom static assets
         new CopyWebpackPlugin([{
@@ -157,4 +160,4 @@ if (config.build.bundleAnalyzerReport) {
     webpackConfig.plugins.push(new BundleAnalyzerPlugin());
 }
 
-module.exports = webpackConfig;
+module.exports = webpackConfig; //eslint-disable-line
