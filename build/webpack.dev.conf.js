@@ -15,7 +15,7 @@ const PORT = process.env.PORT && Number(process.env.PORT);
 const devWebpackConfig = merge(baseWebpackConfig, {
     module: {
         rules: [{
-            test: /\.(css|scss)$/,
+            test: /\.(css|scss|less|styl)$/,
             use: ExtractTextPlugin.extract({
                 fallback: 'style-loader',
                 use: [{
@@ -26,6 +26,8 @@ const devWebpackConfig = merge(baseWebpackConfig, {
                         }
                     },
                     'sass-loader',
+                    'less-loader',
+                    'stylus-loader',
                     'postcss-loader'
                 ]
             })
