@@ -73,6 +73,24 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     ]
 });
 
+Object.keys(baseWebpackConfig.entry).forEach(function (name) {
+    var hwp = new HtmlWebpackPlugin({
+        filename: name + '.html',
+        template: './src/' + name + '.html',
+        inject: true,
+        minify: {
+            removeComments: true,
+            collapseWhitespace: true,
+            removeAttributeQuotes: true
+            // more options:
+            // https://github.com/kangax/html-minifier#options-quick-reference
+        },
+        // necessary to consistently work with multiple chunks via CommonsChunkPlugin
+        chunksSortMode: 'dependency'
+    });
+    devWebpackConfig.plugins.push(hwp);
+});
+
 module.exports = new Promise((resolve, reject) => {
     portfinder.basePort = process.env.PORT || config.dev.port;
     portfinder.getPort((err, port) => {
@@ -93,5 +111,4 @@ module.exports = new Promise((resolve, reject) => {
             resolve(devWebpackConfig);
         }
     });
-});
-/* module.exports = devWebpackConfig; */
+}); //eslint-disable-line
