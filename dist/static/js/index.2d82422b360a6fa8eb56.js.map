@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/js/index.js"],"names":["console","log"],"mappings":"iJACAA,QAAQC,IAAI","file":"static/js/index.2d82422b360a6fa8eb56.js","sourcesContent":["import '../sass/reset.scss';\r\nconsole.log('webapck-cli');\n\n\n// WEBPACK FOOTER //\n// ./src/js/index.js"],"sourceRoot":""}

@@ -2,7 +2,7 @@
 const path = require('path');
 const utils = require('./utils');
 const config = require('../config');
-const extractTextPlugin = require('extract-text-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 function resolve(dir) {
     return path.join(__dirname, '..', dir);
@@ -11,7 +11,7 @@ function resolve(dir) {
 module.exports = {
     context: path.resolve(__dirname, '../'),
     entry: {
-        index: './src/js/index.js',
+        index: './src/js/index.js'
     },
     output: {
         path: config.build.assetsRoot,
@@ -57,10 +57,10 @@ module.exports = {
         ]
     },
     plugins: [
-        new extractTextPlugin({
+        new ExtractTextPlugin({
             filename: 'static/css/[name].css',
             allChunks: true
-        }),
+        })
     ],
     node: {
         // prevent webpack from injecting useless setImmediate polyfill because Vue
@@ -74,4 +74,4 @@ module.exports = {
         tls: 'empty',
         child_process: 'empty'
     }
-}
+};
