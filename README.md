@@ -38,11 +38,15 @@
 该脚手架适用于单页面以及多页面项目，如果你才接触`webpack`，对于其配置有点迷，然后又想利用`webpack`在开发中的简单方便，那么你就可以使用该脚手架。
 ### 使用
 先`git clone`到本地，由于本项目使用包管理工具NPM，因此需要先把本项目所依赖的包下载下来：
+
     npm install || cnpm install(网络不佳推荐使用)
 启动服务，利用`webpack`提供的插件`webpack-dev-server`来进行开发（启动后会有个[demo](https://kuangpf.github.io/webpack-cli/dist/index.html)）
+
     npm run dev
 打包
+
     npm run build
+
 ### 目录结构
     webpack-cli
     |
