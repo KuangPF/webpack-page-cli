@@ -207,13 +207,19 @@
           additionalTransformers: []
     })
 ###### demo
+
+
 Build success:
+
 ![build-success](https://camo.githubusercontent.com/8626811b709addc6e4e953b1ed2d3414fc843522/687474703a2f2f692e696d6775722e636f6d2f4d6b554568597a2e676966)
 eslint-loader errors
+
 ![eslint-loader-errors](https://camo.githubusercontent.com/c256a672a786f2cc15037e8a371a886ffe9505bd/687474703a2f2f692e696d6775722e636f6d2f5735397a3857462e676966)
 babel-loader syntax errors
+
 ![babel-loader syntax errors](https://camo.githubusercontent.com/c256a672a786f2cc15037e8a371a886ffe9505bd/687474703a2f2f692e696d6775722e636f6d2f5735397a3857462e676966)
 Module not found
+
 ![module-not-found](https://camo.githubusercontent.com/2e42570a995dd411ac49739cd02ebabf447b559b/687474703a2f2f692e696d6775722e636f6d2f4f6976573441732e676966)
 
 ##### [copy-webpack-plugin](https://github.com/webpack-contrib/copy-webpack-plugin)
