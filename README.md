@@ -1,8 +1,8 @@
 # webpack-cli
 
-> 基于 webpack 3.10.0 的页面打包脚手架,支持单页面和多页面
+> 基于 webpack 3.10.0 的页面打包脚手架,支持单页面和多页面 :hammer:
 
-> 参考 vue-cli 脚手架配置   
+> 参考 vue-cli 脚手架配置，支持`es6`,`eslint`以及热更新 :wrench:
 
 ## 目录
 * [介绍](#介绍)
@@ -33,9 +33,11 @@
 * [小结](#小结)
 ### 介绍
 `webpack`是目前前端非常流行的打包工具，它可以把模块(s)连同它的依赖一起打包生成包含这些模块的静态资源，这也是其优点所在。在webpack看来一切都是模块！包括你的JavaScript代码，也包括CSS和fonts以及图片等等等，只要通过合适的loaders，它们都可以被当做模块被处理。
+------
 ### webpack-cli
 `webpack`这么好，这么方便，哪有不用之理。但是...‘理想是丰满的，现实是残酷的’，当我第一次接触`webpack`时，看了官方文档一遍又一遍，读了博客一篇又一篇，踩了坑一个又一个，（可能由于 `too vegetables`）还是有点懵。然后自尝试写一下配置，就逐渐明白了其中的一些套路。然后由于又在使用`vue-cli`脚手架开发一些项目，再研究了一些`vue-cli`其中的`webpack`的配置，最终抽离了其中的配置部分，形成了`webpack-cli`，目录结构与`vue-cli`相似，仅限于学习，交流。
 该脚手架适用于单页面以及多页面项目，如果你才接触`webpack`，对于其配置有点迷，然后又想利用`webpack`在开发中的简单方便，那么你就可以使用该脚手架。
+------
 ### 使用
 先`git clone`到本地，由于本项目使用包管理工具NPM，因此需要先把本项目所依赖的包下载下来：
 
@@ -46,7 +48,7 @@
 打包
 
     npm run build
-
+------
 ### 目录结构
     webpack-cli
     |
@@ -87,11 +89,13 @@
     ├─package.json              // npm 脚本  项目描述
     ├─postcss.config.js         // postcss插件配置
     └─README.md
+------
 ### 多页面配置
 该脚手架支持多页面配置，对于多页面配置如下
 - 在src目录下面新建`pageA.html`,在src/js/ 目录下面新建`pageA.js`(页面名称和js名字一定要一样，因为在打包时候会根据`js`文件的名称生成对应的`html`模板)
 - 在`ebpack.base.conf.js`入口文件`entry`添加入口，`{pageA: './src/js/pageA.js'}`
 - 如果还有更多的页面，依次类推
+------
 ### 加载器
 - [babel-loader](#https://github.com/babel/babel-loader) 是转化 `es6`代码，方便浏览器解析
 - [html-loader](#https://github.com/webpack-contrib/html-loader) 对`.html || .htm`文件进行处理
@@ -102,6 +106,7 @@
 - [sass-loader](#https://github.com/webpack-contrib/sass-loader)处理`.scss`文件，将`scss`预处理语言转化为可处理的`css`
 - [less-loader](#https://github.com/webpack-contrib/less-loader)处理`.less`文件，将`less`预处理语言转化为可处理的`css`
 - [stylus-loader](#https://github.com/shama/stylus-loader)处理`.styl`文件，将`stylus`预处理语言转化为可处理的`css`
+------
 ### 插件
 ##### [webpack-dev-serve](#https://github.com/webpack/webpack-dev-server)
 `webpack-dev-server`应该是`webpack`插件中必不可少的一部分，主要是为在开发过程中提供一个服务，利用其热更新的功能让开发变得很方便。当执行`webpack-dev-server`时，第一步和`webpack`一样，先构建输出，然后提供`web`访问，但需要指出的是，输出的文件是在内存中。webpack-dev-server支持两种模式来自动刷新页面
@@ -256,7 +261,9 @@ Module not found
 - uglifyOptions： uglify [Options](https://github.com/mishoo/UglifyJS2/tree/harmony#minify-options).
 - extractComments:  是否将注释解压到一个单独的文件中，默认`false`.
 - warningsFilter: 是否过滤到`uglify`警告。
+------
 ### 版本
 目前版本`1.0.0`,持续更新~ 欢迎star
+------
 ### 小结
 其实写这个项的目的有两个，第一就是生成一个脚手架，方便以后项目的重复利用，第二就是将`webpack`的一些知识再次复习一下。现在技术更新的太快了，前几天看了一下新的打包工具[parcel](https://parceljs.org/),发现其打包速度很快，而且几乎0配置，但也有缺点，生成后的文件比较大。还有比较坑的一点是，如果发现一些莫名奇妙的错误可能答案都找不到...毕竟parcel还很年轻。其实这样也挺好的，有竞争才会有有更好的产品，`webpack`也更新的十分迅速，目前版本`3.10.0`。最后这篇文章如果什么错误还希望大牛们提[issues](https://github.com/KuangPF/webpack-cli/issues)，另外就是该项目的主要参考了[vue-cli](https://github.com/vuejs/vue-cli),目的仅限于交流学习@[Evan You](https://github.com/yyx990803).
