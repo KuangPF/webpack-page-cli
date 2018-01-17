@@ -268,10 +268,11 @@ Module not found
 - extractComments:  是否将注释解压到一个单独的文件中，默认`false`.
 - warningsFilter: 是否过滤到`uglify`警告。
 
-
 ------
 ### 版本
+
 目前版本`1.0.0`,持续更新~ 欢迎star
+
 ------
 ### 小结
 其实写这个项的目的有两个，第一就是生成一个脚手架，方便以后项目的重复利用，第二就是将`webpack`的一些知识再次复习一下。现在技术更新的太快了，前几天看了一下新的打包工具[parcel](https://parceljs.org/),发现其打包速度很快，而且几乎0配置，但也有缺点，生成后的文件比较大。还有比较坑的一点是，如果发现一些莫名奇妙的错误可能答案都找不到...毕竟parcel还很年轻。其实这样也挺好的，有竞争才会有有更好的产品，`webpack`也更新的十分迅速，目前版本`3.10.0`。最后这篇文章如果什么错误还希望大牛们提[issues](https://github.com/KuangPF/webpack-cli/issues)，另外就是该项目的主要参考了[vue-cli](https://github.com/vuejs/vue-cli),目的仅限于交流学习@[Evan You](https://github.com/yyx990803).
