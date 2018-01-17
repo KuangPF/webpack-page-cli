@@ -110,14 +110,16 @@
 - [stylus-loader](#https://github.com/shama/stylus-loader)处理`.styl`文件，将`stylus`预处理语言转化为可处理的`css`
 
 ## 插件
-#### [webpack-dev-serve](#https://github.com/webpack/webpack-dev-server)
+
+#### [webpack-dev-serve](https://github.com/webpack/webpack-dev-server)
 `webpack-dev-server`应该是`webpack`插件中必不可少的一部分，主要是为在开发过程中提供一个服务，利用其热更新的功能让开发变得很方便。当执行`webpack-dev-server`时，第一步和`webpack`一样，先构建输出，然后提供`web`访问，但需要指出的是，输出的文件是在内存中。webpack-dev-server支持两种模式来自动刷新页面
 - `iframe`模式(页面放在iframe中,当发生改变时重载)
 - `inline`模式(将`webpack-dev-sever`的客户端入口添加到包(bundle)中)
 两种模式都支持热模块替换(Hot Module Replacement).热模块替换的好处是只替换更新的部分,而不是页面重载.
 `iframe`模式：使用这种模式不需要额外的配置,只需要这种URL格式访问即可：`http://«host»:«port»/webpack-dev-server/«path»`
 `inline`模式:inline模式下我们访问的URL不用发生变化:`webpack-dev-server --content-base build --inline --hot`
-#### [html-webpack-plugin](#https://github.com/jantimon/html-webpack-plugin)
+
+#### [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin)
 将 webpack中`entry`配置的相关入口thunk  和  `extract-text-webpack-plugin`抽取的css样式   插入到该插件提供的`template`或者`templateContent`配置项指定的内容基础上生成一个html文件，具体插入方式是将样式`link`插入到`head`元素中，`script`插入到`head`或者`body`中，通过`new HtmlWebpackPlugin({})`
 
     {
@@ -147,7 +149,7 @@
    - false
      - 不插入生成的 js 文件，只是单纯的生成一个 html 文件。
 - favicon: 给生成的 html 文件生成一个 favicon。属性值为 favicon 文件所在的路径名。
-- minify: minify 的作用是对 html 文件进行压缩，minify 的属性值是一个压缩选项或者 false 。默认值为false, 不对生成的 html 文件进行压缩，[配置参数](#https://github.com/kangax/html-minifier#options-quick-reference)。
+- minify: minify 的作用是对 html 文件进行压缩，minify 的属性值是一个压缩选项或者 false 。默认值为false, 不对生成的 html 文件进行压缩，[配置参数](https://github.com/kangax/html-minifier#options-quick-reference)。
 - hash: hash选项的作用是 给生成的 js 文件一个独特的 hash 值，该 hash 值是该次 webpack 编译的 hash 值。默认值为 false 。
 - cache: 默认值是 true。表示只有在内容变化时才生成一个新的文件。
 - showErrors: showErrors 的作用是，如果 webpack 编译出现错误，webpack会将错误信息包裹在一个 pre 标签内，属性的默认值为 true ，也就是显示错误信息。。
@@ -155,7 +157,8 @@
 - chunksSortMode： 这个选项决定了 script 标签的引用顺序。默认有四个选项，'none', 'auto', 'dependency', '{function}'。
 - excludeChunks： 与chunks相反，不要哪些模块。
 - xhtml： 一个布尔值，默认值是 false ，如果为 true ,则以兼容 xhtml 的模式引用文件。
-#### [extract-text-webpack-plugin](#https://github.com/webpack-contrib/extract-text-webpack-plugin)
+
+#### [extract-text-webpack-plugin](https://github.com/webpack-contrib/extract-text-webpack-plugin)
 为了让打包后样式生效，有两种方法，一种是使用style-loader自动将css代码放到生成的style标签中插入到head标签里。另一种就是使用extract-text-webpack-plugin插件，将样式文件单独打包，打包输出的文件由配置文件中的output属性指定。然后我们在入口HTML页面写个link标签引入这个打包后的样式文件。
 ##### 参数配置
 - id: 这个插件实例的唯一标识符。（仅限高级用法，默认情况下自动生成）
@@ -188,7 +191,8 @@
         //})
       ]
     }
-#### [webpack-merge](#https://github.com/survivejs/webpack-merge)
+
+#### [webpack-merge](https://github.com/survivejs/webpack-merge)
 `webpack-merge`的作用在于将多个`webpack`的配置合并成一个配置，比如在该项目中，有一个`webpack.base.conf.js`这个是基础配置
 还有`webpack.dev.conf.js`开发环境的一些配置以及`webpack.prod.conf`生成环境的一些配置、我们需要将基础配置和开发环境配置合并在一起，这就需要`webpack-merge`，同理生产环境一样。配置方法如下:
 ##### merge(...configuration | [...configuration])
@@ -197,7 +201,8 @@
     // You can pass an array of objects directly.
     // This works with all available functions.
     var output = merge([object1, object2, object3]);
-#### [friendly-errors-webpack-plugin](#https://github.com/geowarin/friendly-errors-webpack-plugin)
+
+#### [friendly-errors-webpack-plugin](https://github.com/geowarin/friendly-errors-webpack-plugin)
 这个插件的作用就是友好的输出webpack的一些警告、错误等信息。
 ##### 用法
     new FriendlyErrorsPlugin({
@@ -249,8 +254,10 @@ Module not found
 - ignore： 忽略拷贝指定的文件，可以用模糊匹配。
 - transform： Function that modifies file contents before writing to webpack.
 - force： Overwrites files already in compilation.assets (usually added by other plugins).
+
 #### [optimize-css-assets-webpack-plugin](https://github.com/NMFR/optimize-css-assets-webpack-plugin)
 `optimize-css-assets-webpack-plugin`用于压缩提取出的css，并解决ExtractTextPlugin分离出的js重复问题(多个文件引入同一css文件)。
+
 #### [uglifyjs-webpack-plugin](https://github.com/webpack-contrib/uglifyjs-webpack-plugin)
 这个插件使用 UglifyJS 去压缩你的JavaScript代码。除了它从 webpack 中解耦之外，它和 webpack 核心插件 (webpack.optimize.UglifyJSPlugin) 是同一个插件。这允许你控制你正在使用的 UglifyJS 的版本。
 ##### 参数配置
