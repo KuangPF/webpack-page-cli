@@ -56,8 +56,9 @@
     "stylus-loader": "^3.0.1",
     "uglifyjs-webpack-plugin": "^1.1.6",
     "url-loader": "^0.6.2",
-    "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.10.1",
+    "webpack": "^4.2.0",
+    "webpack-cli": "^2.0.13",
+    "webpack-dev-server": "3.1.1",
     "webpack-merge": "^4.1.1"
   }
 }
