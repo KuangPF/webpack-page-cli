@@ -2,7 +2,7 @@
 const path = require('path');
 const utils = require('./utils');
 const config = require('../config');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir);
@@ -59,8 +59,11 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin({
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
       filename: 'static/css/[name].css',
+      chunkFilename: '[id].css',
       allChunks: true
     })
   ],
