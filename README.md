@@ -93,7 +93,7 @@
 ## 多页面配置
 该脚手架支持多页面配置，对于多页面配置如下
 - 在src目录下面新建`pageA.html`,在src/js/ 目录下面新建`pageA.js`(页面名称和js名字一定要一样，因为在打包时候会根据`js`文件的名称生成对应的`html`模板)
-- 在`ebpack.base.conf.js`入口文件`entry`添加入口，`{pageA: './src/js/pageA.js'}`
+- 在`webpack.base.conf.js`入口文件`entry`添加入口，`{pageA: './src/js/pageA.js'}`
 - 如果还有更多的页面，依次类推
 
 
