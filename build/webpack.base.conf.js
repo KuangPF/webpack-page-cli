@@ -1,16 +1,17 @@
-'use srtict';
-const path = require('path');
-const utils = require('./utils');
-const config = require('../config');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+'use srtict'
+const path = require('path')
+const utils = require('./utils')
+const config = require('../config')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 function resolve(dir) {
-  return path.join(__dirname, '..', dir);
+  return path.join(__dirname, '..', dir)
 }
 
 module.exports = {
   entry: {
-    index: './src/js/index.js'
+    index: './src/js/index.js',
+    pageA: './src/js/pageA.js'
   },
   output: {
     path: config.build.assetsRoot,
@@ -21,26 +22,32 @@ module.exports = {
     extensions: ['.js', '.vue', '.json']
   },
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test')],
         options: {
           presets: ['es2015']
         }
-      }, {
+      },
+      {
         test: /\.html$/,
-        use: [{
-          loader: 'html-loader'
-        }]
-      }, {
+        use: [
+          {
+            loader: 'html-loader'
+          }
+        ]
+      },
+      {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {
           limit: 10000,
           name: utils.assetsPath('img/[name].[hash:7].[ext]')
         }
-      }, {
+      },
+      {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
         loader: 'url-loader',
         options: {
@@ -79,4 +86,4 @@ module.exports = {
     tls: 'empty',
     child_process: 'empty'
   }
-};
+}
