@@ -4,8 +4,14 @@
 
 
 ## 使用
-* 先`git clone`到本地，然后安装依赖
 
+* `git clone`到本地，
+
+``` bash
+git clone git@github.com:KuangPF/webpack-page-cli.git -b temp
+```
+
+* 安装依赖
 Install with npm:
 
 ``` bash 
