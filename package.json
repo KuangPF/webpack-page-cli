@@ -6,6 +6,7 @@
     "webpack-page": "bin/index.js"
   },
   "scripts": {
+    "create": "node --inspect-brk=5858 ./bin/index.js create demo",
     "test": "echo \"Error: no test specified\" && exit 0"
   },
   "keywords": [
