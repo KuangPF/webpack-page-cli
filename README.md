@@ -1,4 +1,4 @@
-# webpack-cli
+# webpack-page-cli
 
 ![webpack-version](https://img.shields.io/badge/webpack-v4.8.3-brightgreen.svg) ![webpack-cli-version](https://img.shields.io/badge/webpack--cli-v3.1.1-brightgreen.svg) ![webpack-dev-server-version](https://img.shields.io/badge/webpack--dev--server-v3.1.4-brightgreen.svg) 
 
