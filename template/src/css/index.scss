@@ -1,0 +1,47 @@
+.index {
+    .logo {
+        width: 200px;
+        height: 200px;
+        margin: 30px auto;
+    }
+    .title {
+        margin: 10px auto;
+        line-height: 1;
+        font-size: 40px;
+        color: #2B3A42;
+        text-align: center;
+    }
+    .content {
+        margin-top: 50px;
+        p {
+            margin: 0;
+            line-height: 2em;
+            font-size: 16px;
+            text-align: center;
+            letter-spacing: 2px;
+            a {
+                color: #999;
+                text-decoration: none;
+                transition: color .2s ease;
+                &:hover {
+                    color: #1C78C0;
+                }
+            }
+        }
+    }
+    .foot {
+        margin-top: 20px;
+        text-align: center;
+        span {
+            font-size: 20px;
+            color: #465E69;
+            text-align: center;
+        }
+        a {
+            color: #8ED6FB;
+            &:hover {
+                color: #1C78C0;
+            }
+        }
+    }
+}
