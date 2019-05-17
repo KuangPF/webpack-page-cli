@@ -31,21 +31,6 @@ const devWebpackConfig = merge(baseWebpackConfig, {
           'stylus-loader',
           'postcss-loader'
         ]
-        /* use: ExtractTextPlugin.extract({
-        fallback: 'style-loader',
-        use: [{
-            loader: 'css-loader',
-            options: {
-              importLoaders: 1,
-              minimize: ''
-            }
-          },
-          'sass-loader',
-          'less-loader',
-          'stylus-loader',
-          'postcss-loader'
-        ]
-      }) */
       }
     ]
   },
