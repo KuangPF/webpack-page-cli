@@ -1,0 +1,50 @@
+{
+  "name": "webpack-cli",
+  "version": "1.0.0",
+  "description": "基于 webpack 的多页面脚手架",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --content-base --progress --config build/webpack.dev.conf.js",
+    "build": "node build/build.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webpack-cli"
+  ],
+  "author": "kuangpengfei",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "autoprefixer": "^7.2.5",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-loader": "^7.1.5",
+    "babel-runtime": "^6.26.0",
+    "chalk": "^2.3.0",
+    "copy-webpack-plugin": "^5.0.3",
+    "css-loader": "^0.28.8",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.2",
+    "file-loader": "^1.1.6",
+    "friendly-errors-webpack-plugin": "^1.6.1",
+    "html-loader": "^0.5.4",
+    "html-webpack-plugin": "^3.2.0",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
+    "mini-css-extract-plugin": "^0.6.0",
+    "node-notifier": "^5.2.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "ora": "^1.3.0",
+    "path": "^0.12.7",
+    "portfinder": "^1.0.13",
+    "postcss-loader": "^2.0.10",
+    "rimraf": "^2.6.2",
+    "uglifyjs-webpack-plugin": "^2.1.3",
+    "url-loader": "^0.6.2",
+    "webpack": "^4.8.3",
+    "webpack-cli": "3.1.1",
+    "webpack-dev-server": "3.1.4",
+    "webpack-merge": "^4.1.2"
+  }
+}
