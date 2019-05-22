@@ -26,9 +26,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
             }
           },
           'css-loader',
-          'sass-loader',
           'less-loader',
-          'stylus-loader',
           'postcss-loader'
         ]
       }
@@ -74,6 +72,7 @@ Object.keys(baseWebpackConfig.entry).forEach(function(name) {
     template: './src/' + name + '.html',
     inject: true,
     favicon: './favicon.ico',
+    chunks: [name],
     minify: {
       removeComments: true,
       collapseWhitespace: true,

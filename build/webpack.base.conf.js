@@ -11,7 +11,7 @@ function resolve(dir) {
 module.exports = {
   entry: {
     index: './src/js/index.js',
-    pageA: './src/js/pageA.js'
+    about: './src/js/about.js'
   },
   output: {
     path: config.build.assetsRoot,
@@ -25,11 +25,13 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
-        include: [resolve('src'), resolve('test')],
-        options: {
-          presets: ['es2015']
-        }
+        exclude: /node_modules/,
+        use: [{
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          }
+        }]
       },
       {
         test: /\.html$/,
@@ -67,8 +69,6 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
       filename: 'static/css/[name].css',
       chunkFilename: '[id].css',
       allChunks: true
