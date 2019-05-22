@@ -1,18 +1,12 @@
 {
-  "name": "webpack-cli",
+  "name": "<%= name %>",
   "version": "1.0.0",
-  "description": "基于 webpack 的多页面脚手架",
-  "main": "index.js",
+  "description": "<%= description %>",
   "scripts": {
     "dev": "webpack-dev-server --content-base --progress --config build/webpack.dev.conf.js",
     "build": "node build/build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "webpack-cli"
-  ],
-  "author": "kuangpengfei",
-  "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
