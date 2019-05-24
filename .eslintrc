@@ -11,7 +11,17 @@
     }
   },
   "rules": {
-    "semi":"off",
-    "no-console":"off"
+    "semi": "off",
+    "no-console": "off",
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "never",
+        "objects": "never",
+        "imports": "never",
+        "exports": "never",
+        "functions": "ignore"
+      }
+    ]
   }
 }
