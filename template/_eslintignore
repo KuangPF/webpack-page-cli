@@ -1,2 +1,7 @@
-/dist/
-/build/
+.DS_Store
+node_modules
+test/e2e/mock-template-build
+*.log
+dist/
+.idea
+template/
