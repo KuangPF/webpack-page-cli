@@ -30,6 +30,8 @@
       {
         "allowElseIf": true
       }
-    ]
+    ],
+    "max-len": ["error", { "code": 200 }],
+    "no-param-reassign": "off"
   }
 }
