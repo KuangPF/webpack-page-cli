@@ -16,9 +16,11 @@
     "chalk": "^2.3.0",
     "copy-webpack-plugin": "^5.0.3",
     "css-loader": "^0.28.8",
+    <% if (features.indexOf('eslint') > -1) { %>
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.2",
+    <% } %>
     "file-loader": "^1.1.6",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-loader": "^0.5.4",

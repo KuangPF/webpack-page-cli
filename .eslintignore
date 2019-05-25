@@ -5,3 +5,4 @@ test/e2e/mock-template-build
 dist/
 .idea
 template/
+demo/
