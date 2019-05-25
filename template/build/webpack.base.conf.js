@@ -3,12 +3,13 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
 
-module.exports = {
+const baseWebpackConfig = {
   entry: {
     index: './src/js/index.js',
     about: './src/js/about.js'
@@ -26,12 +27,29 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: [{
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env']
+            }
           }
-        }]
+        ]
+      },
+      {
+        test: /\.(css|scss|less|styl)$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: process.env.NODE_ENV === 'development' ? '' : '../../',
+              hmr: process.env.NODE_ENV === 'development'
+            }
+          },
+          'css-loader',
+          'less-loader',
+          'postcss-loader'
+        ]
       },
       {
         test: /\.html$/,
@@ -74,6 +92,7 @@ module.exports = {
       allChunks: true
     })
   ],
+
   node: {
     // prevent webpack from injecting useless setImmediate polyfill because Vue
     // source contains it (although only uses it if it's native).
@@ -87,3 +106,25 @@ module.exports = {
     child_process: 'empty'
   }
 }
+
+// For multiple pages
+Object.keys(baseWebpackConfig.entry).forEach(function(name) {
+  // see https://github.com/ampedandwired/html-webpack-plugin
+  var hwp = new HtmlWebpackPlugin({
+    filename: name + '.html',
+    template: './src/' + name + '.html',
+    inject: true,
+    favicon: './favicon.ico',
+    chunks: [name],
+    minify: {
+      removeComments: true,
+      collapseWhitespace: true,
+      removeAttributeQuotes: true
+    },
+    // necessary to consistently work with multiple chunks via CommonsChunkPlugin
+    chunksSortMode: 'dependency'
+  })
+  baseWebpackConfig.plugins.push(hwp)
+})
+
+module.exports = baseWebpackConfig

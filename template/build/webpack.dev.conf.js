@@ -4,7 +4,6 @@ const webpack = require('webpack')
 const config = require('../config')
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.conf')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const portfinder = require('portfinder')
@@ -14,24 +13,6 @@ const PORT = process.env.PORT && Number(process.env.PORT)
 
 const devWebpackConfig = merge(baseWebpackConfig, {
   mode: 'development',
-  module: {
-    rules: [
-      {
-        test: /\.(css|scss|less|styl)$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: process.env.NODE_ENV === 'development'
-            }
-          },
-          'css-loader',
-          'less-loader',
-          'postcss-loader'
-        ]
-      }
-    ]
-  },
   devtool: config.dev.devtool,
   devServer: {
     clientLogLevel: 'warning',
@@ -65,26 +46,6 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   ]
 })
 
-Object.keys(baseWebpackConfig.entry).forEach(function(name) {
-  // https://github.com/ampedandwired/html-webpack-plugin
-  var hwp = new HtmlWebpackPlugin({
-    filename: name + '.html',
-    template: './src/' + name + '.html',
-    inject: true,
-    favicon: './favicon.ico',
-    chunks: [name],
-    minify: {
-      removeComments: true,
-      collapseWhitespace: true,
-      removeAttributeQuotes: true
-      // more options:
-      // https://github.com/kangax/html-minifier#options-quick-reference
-    },
-    // necessary to consistently work with multiple chunks via CommonsChunkPlugin
-    chunksSortMode: 'dependency'
-  })
-  devWebpackConfig.plugins.push(hwp)
-})
 
 module.exports = new Promise((resolve, reject) => {
   portfinder.basePort = process.env.PORT || config.dev.port
