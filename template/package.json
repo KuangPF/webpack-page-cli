@@ -1,7 +1,6 @@
 {
   "name": "<%= name %>",
   "version": "1.0.0",
-  "description": "<%= description %>",
   "scripts": {
     "dev": "webpack-dev-server --content-base --progress --config build/webpack.dev.conf.js",
     "build": "node build/build.js",
