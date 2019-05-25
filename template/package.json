@@ -18,8 +18,15 @@
     "css-loader": "^0.28.8",
     <% if (features.indexOf('eslint') > -1) { %>
     "eslint": "^5.16.0",
+    <% if (eslintConfig === 'airbnb') { %>
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.2",
+    <% } else if (eslintConfig === 'standard') {%>
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0",
+    <% } %>
     <% } %>
     "file-loader": "^1.1.6",
     "friendly-errors-webpack-plugin": "^1.6.1",
