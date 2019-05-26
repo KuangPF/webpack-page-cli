@@ -4,6 +4,12 @@
   "scripts": {
     "dev": "webpack-dev-server --content-base --progress --config build/webpack.dev.conf.js",
     "build": "node build/build.js",
+    <%_ if (features.indexOf('eslint') > -1) { _%>
+    "lint:js": "eslint . --fix",
+    <%_ } _%>
+    <%_ if(features.indexOf('stylelint') > -1) { _%>
+    "lint:style":"stylelint 'src/**/*.css' 'src/**/*.scss' 'src/**/*.less'",
+    <%_ } _%>
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
@@ -42,6 +48,18 @@
     <%_ } else if (cssPreprocessor === 'stylus') { _%>
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
+    <%_ } _%>
+    <%_ } _%>
+    <%_ if(features.indexOf('stylelint') > -1) { _%>
+    "stylelint": "^10.0.1",
+    "stylelint-config-standard": "^18.3.0",
+    <%_ if (stylelintConfig === 'recessOrder') { _%>
+    "stylelint-config-recess-order": "^2.0.2",
+    <%_ } _%>
+    <%_ if(features.indexOf('css-preprocessor') > -1) { _%>
+    <%_ if (cssPreprocessor === 'sass') { _%>
+    "stylelint-scss": "^3.6.1",
+    <%_ } _%>
     <%_ } _%>
     <%_ } _%>
     "mini-css-extract-plugin": "^0.6.0",
