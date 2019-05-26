@@ -32,6 +32,7 @@
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-loader": "^0.5.4",
     "html-webpack-plugin": "^3.2.0",
+    <%_ if(features.indexOf('css-preprocessor') > -1) { _%>
     <%_ if (cssPreprocessor === 'less') { _%>
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
@@ -41,6 +42,7 @@
     <%_ } else if (cssPreprocessor === 'stylus') { _%>
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
+    <%_ } _%>
     <%_ } _%>
     "mini-css-extract-plugin": "^0.6.0",
     "node-notifier": "^5.2.1",

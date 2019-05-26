@@ -50,6 +50,7 @@ const baseWebpackConfig = {
           'postcss-loader'
         ]
       },
+      <%_ if (features.indexOf('css-preprocessor') > -1) { _%>
       <%_ if (cssPreprocessor === 'less') { _%>
       {
         test: /\.less$/,
@@ -98,6 +99,7 @@ const baseWebpackConfig = {
           'stylus-loader',
         ]
       },
+      <%_ } _%>
       <%_ } _%>
       {
         test: /\.html$/,
