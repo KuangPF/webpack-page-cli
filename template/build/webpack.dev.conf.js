@@ -37,6 +37,11 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     }
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'static/css/[name].css',
+      chunkFilename: '[id].css',
+      allChunks: true
+    }),
     new webpack.DefinePlugin({
       'process.env': require('../config/dev.env')
     }),

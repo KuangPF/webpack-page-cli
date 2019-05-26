@@ -37,7 +37,7 @@ const baseWebpackConfig = {
         ]
       },
       {
-        test: /\.(css|scss|less|styl)$/,
+        test: /\.css$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -47,8 +47,52 @@ const baseWebpackConfig = {
             }
           },
           'css-loader',
-          'less-loader',
           'postcss-loader'
+        ]
+      },
+      {
+        test: /\.(sass|scss)$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: process.env.NODE_ENV === 'development' ? '' : '../../',
+              hmr: process.env.NODE_ENV === 'development'
+            }
+          },
+          'css-loader',
+          'postcss-loader',
+          'sass-loader'
+        ]
+      },
+      {
+        test: /\.less$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: process.env.NODE_ENV === 'development' ? '' : '../../',
+              hmr: process.env.NODE_ENV === 'development'
+            }
+          },
+          'css-loader',
+          'postcss-loader',
+          'less-loader'
+        ]
+      },
+      {
+        test: /\.styl$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: process.env.NODE_ENV === 'development' ? '' : '../../',
+              hmr: process.env.NODE_ENV === 'development'
+            }
+          },
+          'css-loader',
+          'postcss-loader',
+          'stylus-loader',
         ]
       },
       {
@@ -86,11 +130,7 @@ const baseWebpackConfig = {
     ]
   },
   plugins: [
-    new MiniCssExtractPlugin({
-      filename: 'static/css/[name].css',
-      chunkFilename: '[id].css',
-      allChunks: true
-    })
+    
   ],
 
   node: {
