@@ -2,7 +2,7 @@
   "env": {
     "browser": true
   },
-  <% const eslintExtends = {base: 'eslint:recommended',airbnb: 'airbnb-base', standard: 'standard'}%>
+  <%_ const eslintExtends = {base: 'eslint:recommended',airbnb: 'airbnb-base', standard: 'standard'} _%>
   "extends": "<%= eslintExtends[eslintConfig] %>",
   "parserOptions": {
     "ecmaVersion": 8,
