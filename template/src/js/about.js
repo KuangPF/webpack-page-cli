@@ -1,1 +1,2 @@
-import '../css/about.less'
+<%_ const cssSuffixName = {less: 'less',sass: 'scss', stylus: 'styl'} _%>
+import '../css/about.<%= cssSuffixName[cssPreprocessor] %>'
