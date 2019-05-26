@@ -21,7 +21,7 @@
     <%_ if (eslintConfig === 'airbnb') { _%>
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.2",
-    <%_ } else if (eslintConfig === 'standard') {_%>
+    <%_ } else if (eslintConfig === 'standard') { _%>
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-node": "^9.1.0",
     "eslint-plugin-promise": "^4.1.1",
@@ -32,8 +32,16 @@
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-loader": "^0.5.4",
     "html-webpack-plugin": "^3.2.0",
+    <%_ if (cssPreprocessor === 'less') { _%>
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
+    <%_ } else if (cssPreprocessor === 'sass') { _%>
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0",
+    <%_ } else if (cssPreprocessor === 'stylus') { _%>
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    <%_ } _%>
     "mini-css-extract-plugin": "^0.6.0",
     "node-notifier": "^5.2.1",
     "optimize-css-assets-webpack-plugin": "^5.0.1",

@@ -50,21 +50,7 @@ const baseWebpackConfig = {
           'postcss-loader'
         ]
       },
-      {
-        test: /\.(sass|scss)$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: process.env.NODE_ENV === 'development' ? '' : '../../',
-              hmr: process.env.NODE_ENV === 'development'
-            }
-          },
-          'css-loader',
-          'postcss-loader',
-          'sass-loader'
-        ]
-      },
+      <%_ if (cssPreprocessor === 'less') { _%>
       {
         test: /\.less$/,
         use: [
@@ -80,6 +66,23 @@ const baseWebpackConfig = {
           'less-loader'
         ]
       },
+      <%_ } else if (cssPreprocessor === 'sass') { _%>
+      {
+        test: /\.(sass|scss)$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: process.env.NODE_ENV === 'development' ? '' : '../../',
+              hmr: process.env.NODE_ENV === 'development'
+            }
+          },
+          'css-loader',
+          'postcss-loader',
+          'sass-loader'
+        ]
+      },
+      <%_ } else if (cssPreprocessor === 'stylus') { _%>
       {
         test: /\.styl$/,
         use: [
@@ -95,6 +98,7 @@ const baseWebpackConfig = {
           'stylus-loader',
         ]
       },
+      <%_ } _%>
       {
         test: /\.html$/,
         use: [
