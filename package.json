@@ -24,6 +24,7 @@
     "commander": "^2.20.0",
     "debug": "^4.1.1",
     "ejs": "^2.6.1",
+    "ejs-lint": "^0.3.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.2",
