@@ -5,7 +5,6 @@ const utils = require('./utils')
 const merge = require('webpack-merge')
 const config = require('../config')
 const baseWebpackConfig = require('./webpack.base.conf')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
@@ -15,25 +14,6 @@ const env = require('../config/prod.env')
 
 const webpackConfig = merge(baseWebpackConfig, {
   mode: 'production',
-  module: {
-    rules: [
-      {
-        test: /\.(css|scss|less|styl)$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: '../../',
-              hmr: process.env.NODE_ENV === 'development'
-            }
-          },
-          'css-loader',
-          'less-loader',
-          'postcss-loader'
-        ]
-      }
-    ]
-  },
   devtool: config.build.productionSourceMap ? config.build.devtool : false,
   output: {
     path: config.build.assetsRoot,
@@ -94,25 +74,6 @@ const webpackConfig = merge(baseWebpackConfig, {
   ]
 })
 
-// For multiple pages
-Object.keys(baseWebpackConfig.entry).forEach(function(name) {
-  // see https://github.com/ampedandwired/html-webpack-plugin
-  var hwp = new HtmlWebpackPlugin({
-    filename: name + '.html',
-    template: './src/' + name + '.html',
-    inject: true,
-    favicon: './favicon.ico',
-    chunks: [name],
-    minify: {
-      removeComments: true,
-      collapseWhitespace: true,
-      removeAttributeQuotes: true
-    },
-    // necessary to consistently work with multiple chunks via CommonsChunkPlugin
-    chunksSortMode: 'dependency'
-  })
-  webpackConfig.plugins.push(hwp)
-})
 if (config.build.productionGzip) {
   const CompressionWebpackPlugin = require('compression-webpack-plugin')
 
