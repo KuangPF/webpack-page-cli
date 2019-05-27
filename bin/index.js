@@ -26,7 +26,7 @@ function checkNodeVersion(wanted, id) {
     process.exit(1)
   }
 }
-checkNodeVersion(requiredVersion, 'vue-cli')
+checkNodeVersion(requiredVersion, 'webpack-page-cli')
 program.version(require('../package').version).usage('<command> [options]')
 
 program
