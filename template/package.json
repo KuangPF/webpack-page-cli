@@ -15,13 +15,13 @@
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
-    "autoprefixer": "^7.2.5",
+    "autoprefixer": "^9.5.1",
     "babel-core": "^7.0.0-bridge.0",
     "babel-loader": "^7.1.5",
     "babel-runtime": "^6.26.0",
     "chalk": "^2.3.0",
     "copy-webpack-plugin": "^5.0.3",
-    "css-loader": "^0.28.8",
+    "css-loader": "^2.1.1",
     <%_ if (features.indexOf('eslint') > -1) { _%>
     "eslint": "^5.16.0",
     <%_ if (eslintConfig === 'airbnb') { _%>
@@ -40,7 +40,7 @@
     "html-webpack-plugin": "^3.2.0",
     <%_ if(features.indexOf('css-preprocessor') > -1) { _%>
     <%_ if (cssPreprocessor === 'less') { _%>
-    "less": "^2.7.3",
+    "less": "^3.9.0",
     "less-loader": "^4.0.5",
     <%_ } else if (cssPreprocessor === 'sass') { _%>
     "node-sass": "^4.12.0",
