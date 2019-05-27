@@ -24,9 +24,9 @@
     "css-loader": "^2.1.1",
     <%_ if (features.indexOf('eslint') > -1) { _%>
     "eslint": "^5.16.0",
+    "eslint-plugin-import": "^2.17.2",
     <%_ if (eslintConfig === 'airbnb') { _%>
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.17.2",
     <%_ } else if (eslintConfig === 'standard') { _%>
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-node": "^9.1.0",
