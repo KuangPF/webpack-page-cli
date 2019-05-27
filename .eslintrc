@@ -25,6 +25,7 @@
     ],
     "arrow-parens": ["error", "as-needed"],
     "arrow-body-style": "off",
+    "no-underscore-dangle":"off",
     "no-else-return": [
       "error",
       {
@@ -32,6 +33,7 @@
       }
     ],
     "max-len": ["error", { "code": 200 }],
-    "no-param-reassign": "off"
+    "no-param-reassign": "off",
+    "no-return-assign":["error"]
   }
 }
