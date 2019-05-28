@@ -20,10 +20,15 @@ webpack-page-cli create <app-name>
 ## 功能
 
 :white_check_mark: es6 ➡️ es5
+
 :white_check_mark: css 预处理器支持（scss less stylus）
+
 :white_check_mark: eslint
+
 :white_check_mark: stylelint
+
 :white_check_mark: 多页面支持
+
 :white_check_mark: 模块热替换 (HRM)
 
 
