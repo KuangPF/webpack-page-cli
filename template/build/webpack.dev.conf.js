@@ -3,6 +3,7 @@ const utils = require('./utils')
 const webpack = require('webpack')
 const config = require('../config')
 const merge = require('webpack-merge')
+const chalk = require('chalk')
 const baseWebpackConfig = require('./webpack.base.conf')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -66,7 +67,7 @@ module.exports = new Promise((resolve, reject) => {
       devWebpackConfig.plugins.push(
         new FriendlyErrorsPlugin({
           compilationSuccessInfo: {
-            messages: [`Your application is running here: http://${devWebpackConfig.devServer.host}:${port}`]
+            messages: [` App running at: ${chalk.cyan(`http://${devWebpackConfig.devServer.host}:${port}`)} `]
           },
           onErrors: config.dev.notifyOnErrors ? utils.createNotifierCallback() : undefined
         })
