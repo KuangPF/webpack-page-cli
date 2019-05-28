@@ -1,46 +1,34 @@
 # webpack-page-cli
 
-![webpack-version](https://img.shields.io/badge/webpack-v4.8.3-brightgreen.svg) ![webpack-cli-version](https://img.shields.io/badge/webpack--cli-v3.1.1-brightgreen.svg) ![webpack-dev-server-version](https://img.shields.io/badge/webpack--dev--server-v3.1.4-brightgreen.svg) 
+![npm-version](https://img.shields.io/npm/v/webpack-page-cli.svg?style=flat) ![webpack-version](https://img.shields.io/badge/webpack-v4.8.3-brightgreen.svg) ![webpack-cli-version](https://img.shields.io/badge/webpack--cli-v3.1.1-brightgreen.svg) ![webpack-dev-server-version](https://img.shields.io/badge/webpack--dev--server-v3.1.4-brightgreen.svg) 
 
 
-**Tip:** 项目升级中...
+## 安装
+
+``` bash 
+npm install webpack-page-cli -g 
+# OR
+yarn global add webpack-page-cli
+```
 
 ## 使用
 
-* `git clone`到本地，
-
-``` bash
-git clone git@github.com:KuangPF/webpack-page-cli.git -b temp
-```
-
-* 安装依赖
-Install with npm:
-
 ``` bash 
-npm install
+webpack-page-cli create <app-name>
 ```
 
-Install with yarn:
+## 功能
 
-``` bash 
-yarn
-```
-
-* 开发
-
-``` bash 
-npm run dev
-```
-
-* 打包
-
-``` bash 
-npm run build
-```
+:white_check_mark: es6 ➡️ es5
+:white_check_mark: css 预处理器支持（scss less stylus）
+:white_check_mark: eslint
+:white_check_mark: stylelint
+:white_check_mark: 多页面支持
+:white_check_mark: 模块热替换 (HRM)
 
 
 ## 目录结构
-    webpack-cli
+    webpack-page-cli
     |
     ├─build
     |   ├─build.js              // webpack 打包时运行的文件，配置了控制台的一些输出信息         
@@ -72,10 +60,11 @@ npm run build
     |
     |─static                    // 静态资源，比如一些类库，打包后会直接打包到 /dist/static目录下
     |   └─.gitkeep
-    ├─.balelrc                  // es6==>es5
+    ├─.balelrc                  // es6 ==> es5
     ├─.eslintrc.js              // eslint 配置
+    ├─.stylelintrc.json         // stylelint 配置   
     ├─.gitignore                // git 提交忽略
-    ├─favicon                   // icon
+    ├─favicon.icon              // icon
     ├─package.json              // npm 脚本  项目描述
     ├─postcss.config.js         // postcss插件配置
     └─README.md
