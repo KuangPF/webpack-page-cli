@@ -1,0 +1,38 @@
+{
+  "env": {
+    "browser": true
+  },
+  <%_ if(features.indexOf('eslint') > -1) { _%>
+  <%_ const eslintExtends = {base: 'eslint:recommended',airbnb: 'airbnb-base', standard: 'standard'} _%>
+  "extends": "<%= eslintExtends[eslintConfig] %>",
+  <%_ } _%>
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "semi": "off",
+    "no-console": "off",
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "never",
+        "objects": "never",
+        "imports": "never",
+        "exports": "never",
+        "functions": "ignore"
+      }
+    ],
+    "arrow-parens": ["error", "as-needed"],
+    "arrow-body-style": "off",
+    "no-else-return": [
+      "error",
+      {
+        "allowElseIf": true
+      }
+    ]
+  }
+}

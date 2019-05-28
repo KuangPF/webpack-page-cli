@@ -1,0 +1,80 @@
+{
+  "name": "<%= name %>",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "webpack-dev-server --content-base --progress --config build/webpack.dev.conf.js",
+    "build": "node build/build.js",
+    <%_ if (features.indexOf('eslint') > -1) { _%>
+    "lint:js": "eslint . --fix",
+    <%_ } _%>
+    <%_ if(features.indexOf('stylelint') > -1) { _%>
+    "lint:style":"stylelint 'src/**/*.css' 'src/**/*.scss' 'src/**/*.less'",
+    <%_ } _%>
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "autoprefixer": "^9.5.1",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-loader": "^7.1.5",
+    "babel-runtime": "^6.26.0",
+    "chalk": "^2.3.0",
+    "copy-webpack-plugin": "^5.0.3",
+    "css-loader": "^2.1.1",
+    <%_ if (features.indexOf('eslint') > -1) { _%>
+    "eslint": "^5.16.0",
+    "eslint-plugin-import": "^2.17.2",
+    <%_ if (eslintConfig === 'airbnb') { _%>
+    "eslint-config-airbnb-base": "^13.1.0",
+    <%_ } else if (eslintConfig === 'standard') { _%>
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0",
+    <%_ } _%>
+    <%_ } _%>
+    "file-loader": "^1.1.6",
+    "friendly-errors-webpack-plugin": "^1.6.1",
+    "html-loader": "^0.5.4",
+    "html-webpack-plugin": "^3.2.0",
+    <%_ if(features.indexOf('css-preprocessor') > -1) { _%>
+    <%_ if (cssPreprocessor === 'less') { _%>
+    "less": "^3.9.0",
+    "less-loader": "^4.0.5",
+    <%_ } else if (cssPreprocessor === 'sass') { _%>
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0",
+    <%_ } else if (cssPreprocessor === 'stylus') { _%>
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    <%_ } _%>
+    <%_ } _%>
+    <%_ if(features.indexOf('stylelint') > -1) { _%>
+    "stylelint": "^10.0.1",
+    "stylelint-config-standard": "^18.3.0",
+    <%_ if (stylelintConfig === 'recessOrder') { _%>
+    "stylelint-config-recess-order": "^2.0.2",
+    <%_ } _%>
+    <%_ if(features.indexOf('css-preprocessor') > -1) { _%>
+    <%_ if (cssPreprocessor === 'sass') { _%>
+    "stylelint-scss": "^3.6.1",
+    <%_ } _%>
+    <%_ } _%>
+    <%_ } _%>
+    "mini-css-extract-plugin": "^0.6.0",
+    "node-notifier": "^5.2.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "ora": "^1.3.0",
+    "path": "^0.12.7",
+    "portfinder": "^1.0.13",
+    "postcss-loader": "^2.0.10",
+    "rimraf": "^2.6.2",
+    "uglifyjs-webpack-plugin": "^2.1.3",
+    "url-loader": "^0.6.2",
+    "webpack": "^4.8.3",
+    "webpack-cli": "3.1.1",
+    "webpack-dev-server": "3.1.4",
+    "webpack-merge": "^4.1.2"
+  }
+}

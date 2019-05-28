@@ -1,0 +1,15 @@
+{
+  <%_ if(features.indexOf('stylelint') > -1) { _%>
+  <%_ if(stylelintConfig === 'recessOrder') { _%>
+  "extends": ["stylelint-config-standard", "stylelint-config-recess-order"],
+  <%_ } else { _%>
+  "extends": ["stylelint-config-standard"],
+  <%_ } _%>
+  <%_ if (cssPreprocessor === 'sass') { _%>
+  "plugins": ["stylelint-scss"],
+  <%_ } _%>
+  <%_ } _%>
+  "rules": {
+    "rule-empty-line-before": null
+  }
+}

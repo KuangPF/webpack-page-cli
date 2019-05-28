@@ -1,0 +1,11 @@
+<%_ if(features.indexOf('css-preprocessor') < 0) { _%>
+src/css/reset.css
+<%_ } else { _%>
+<%_ if (cssPreprocessor === 'sass') { _%>
+src/css/reset.scss
+<%_ } else if (cssPreprocessor === 'less') { _%>
+src/css/reset.less
+<%_ } else { _%>
+src/css/reset.styl
+<%_ } _%>
+<%_ } _%>
