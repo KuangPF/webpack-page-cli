@@ -32,7 +32,7 @@ program.version(require('../package').version).usage('<command> [options]')
 program
   .command('create <app-name>')
   .description('create a new project powered by webpack-page-cli')
-  .option('-f, --force [message]', 'Overwrite target directory if it exists')
+  .option('-f, --force', 'Overwrite target directory if it exists')
   .action((name, cmd) => {
     const options = cleanArgs(cmd)
     /* eslint-disable global-require */
