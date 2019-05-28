@@ -18,8 +18,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   devServer: {
     clientLogLevel: 'warning',
     historyApiFallback: true,
-    // hot: true,
-    // inline:true,
+    hot: true,
     compress: true,
     host: HOST || config.dev.host,
     port: PORT || config.dev.port,
