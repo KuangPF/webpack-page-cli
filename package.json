@@ -1,6 +1,6 @@
 {
   "name": "webpack-page-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "基于 webpack 的多页面脚手架",
   "bin": {
     "webpack-page": "bin/index.js"
@@ -11,6 +11,10 @@
     "debug": "DEBUG=webpack-page-cli:answers webpack-page create demo -f",
     "debug:test": "WEBPACK_PAGE_CLI_TEST=true DEBUG=webpack-page-cli:answers webpack-page create demo -f",
     "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KuangPF/webpack-page-cli"
   },
   "keywords": [
     "webpack",
