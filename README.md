@@ -31,6 +31,9 @@ webpack-page-cli create <app-name>
 
 :white_check_mark: 模块热替换 (HRM)
 
+## 相关截图
+
+<img width=600 src='https://user-images.githubusercontent.com/20694238/58561515-db08d480-8259-11e9-8f01-df6bda92b112.png'>
 
 ## 目录结构
     webpack-page-cli
