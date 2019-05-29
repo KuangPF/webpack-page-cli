@@ -33,7 +33,7 @@ webpack-page-cli create <app-name>
 
 ## 相关截图
 
-<img width=600 src='https://user-images.githubusercontent.com/20694238/58561515-db08d480-8259-11e9-8f01-df6bda92b112.png'>
+<img width=600 src='https://user-images.githubusercontent.com/20694238/58562564-160c0780-825c-11e9-9f2b-30e47d2b8d62.png'>
 
 ## 目录结构
     webpack-page-cli
