@@ -1,6 +1,6 @@
 {
   "name": "webpack-page-cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "基于 webpack 的多页面脚手架",
   "bin": {
     "webpack-page": "bin/index.js"
