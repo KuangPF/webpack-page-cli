@@ -43,7 +43,8 @@ program
   .command('upgrade')
   .description('upgrade webpack-page-cli')
   .action(() => {
-    console.log('upgrade')
+    /* eslint-disable global-require */
+    require('../lib/upgrade')()
   })
 
 // output help information on unknown commands
