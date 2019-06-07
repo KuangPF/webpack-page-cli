@@ -39,15 +39,21 @@ program
     require('../lib/create')(name, options)
   })
 
-// output help information on unknown commands
 program
-  .arguments('<command>')
-  .action(cmd => {
-    program.outputHelp()
-    console.log()
-    console.log(`  ${chalk.red(`Unknown command ${chalk.yellow(cmd)}.`)}`)
-    console.log()
+  .command('upgrade')
+  .description('upgrade webpack-page-cli')
+  .action(() => {
+    /* eslint-disable global-require */
+    require('../lib/upgrade')()
   })
+
+// output help information on unknown commands
+program.arguments('<command>').action(cmd => {
+  program.outputHelp()
+  console.log()
+  console.log(`  ${chalk.red(`Unknown command ${chalk.yellow(cmd)}.`)}`)
+  console.log()
+})
 
 program.parse(process.argv)
 

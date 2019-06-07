@@ -1,6 +1,6 @@
 # webpack-page-cli
 
-![npm-version](https://img.shields.io/npm/v/webpack-page-cli.svg?style=flat) ![webpack-version](https://img.shields.io/badge/webpack-v4.8.3-brightgreen.svg) ![webpack-cli-version](https://img.shields.io/badge/webpack--cli-v3.1.1-brightgreen.svg) ![webpack-dev-server-version](https://img.shields.io/badge/webpack--dev--server-v3.1.4-brightgreen.svg) 
+![npm-version](https://img.shields.io/npm/v/webpack-page-cli.svg?style=flat) ![download](https://img.shields.io/npm/dm/webpack-page-cli.svg?style=flat) ![webpack-version](https://img.shields.io/badge/webpack-v4.8.3-brightgreen.svg) 
 
 
 ## 安装
