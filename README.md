@@ -14,7 +14,7 @@ yarn global add webpack-page-cli
 ## 使用
 
 ``` bash 
-webpack-page-cli create <app-name>
+webpack-page create <app-name>
 ```
 
 ## 功能
