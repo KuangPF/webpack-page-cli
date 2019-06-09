@@ -1,6 +1,6 @@
 # webpack-page-cli
 
-![npm-version](https://img.shields.io/npm/v/webpack-page-cli.svg?style=flat) ![download](https://img.shields.io/npm/dm/webpack-page-cli.svg?style=flat) ![webpack-version](https://img.shields.io/badge/webpack-v4.8.3-brightgreen.svg) 
+![npm-version](https://img.shields.io/npm/v/webpack-page-cli.svg?style=flat) ![download](https://img.shields.io/npm/dm/webpack-page-cli.svg?style=flat) ![webpack-version](https://img.shields.io/badge/webpack-v4.33.0-brightgreen.svg) 
 
 简体中文 | [English](./README.md)
 
